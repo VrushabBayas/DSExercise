@@ -38,12 +38,19 @@ class Tree {
   }
   traverseDF(fn) {
     const arr = [this.root];
-    while (arr.lenght) {
+    while (arr.length) {
       const node = arr.shift();
       arr.unshift(...node.children);
       fn(node);
     }
   }
 }
+const t = new Tree();
+t.root = new Node("a");
+t.root.add("b");
+t.root.add("c");
+t.root.children[0].add("d");
+console.log("t: ", JSON.stringify(t));
+
 
 module.exports = { Tree, Node };

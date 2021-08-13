@@ -29,39 +29,39 @@ describe('Node', () => {
   });
 });
 
-describe.skip('Tree', () => {
-  test('starts empty', () => {
+describe("Tree", () => {
+  test("starts empty", () => {
     const t = new Tree();
     expect(t.root).toEqual(null);
   });
 
-  test('Can traverse bf', () => {
+  test("Can traverse bf", () => {
     const letters = [];
     const t = new Tree();
-    t.root = new Node('a');
-    t.root.add('b');
-    t.root.add('c');
-    t.root.children[0].add('d');
+    t.root = new Node("a");
+    t.root.add("b");
+    t.root.add("c");
+    t.root.children[0].add("d");
 
-    t.traverseBF(node => {
+    t.traverseBF((node) => {
       letters.push(node.data);
     });
 
-    expect(letters).toEqual(['a', 'b', 'c', 'd']);
+    expect(letters).toEqual(["a", "b", "c", "d"]);
   });
 
-  test('Can traverse DF', () => {
+  test("Can traverse DF", () => {
     const letters = [];
     const t = new Tree();
-    t.root = new Node('a');
-    t.root.add('b');
-    t.root.add('d');
-    t.root.children[0].add('c');
+    t.root = new Node("a");
+    t.root.add("b");
+    t.root.add("d");
+    t.root.children[0].add("c");
 
-    t.traverseDF(node => {
+    t.traverseDF((node) => {
       letters.push(node.data);
     });
 
-    expect(letters).toEqual(['a', 'b', 'c', 'd']);
+    expect(letters).toEqual(["a", "b", "c", "d"]);
   });
 });
